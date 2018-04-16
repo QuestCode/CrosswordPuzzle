@@ -14,6 +14,8 @@
 		212B8DB72077E96400097EE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 212B8DB52077E96400097EE0 /* LaunchScreen.storyboard */; };
 		212B8DC22077E96400097EE0 /* CrosswordPuzzleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212B8DC12077E96400097EE0 /* CrosswordPuzzleTests.swift */; };
 		212B8DCD2077E96400097EE0 /* CrosswordPuzzleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212B8DCC2077E96400097EE0 /* CrosswordPuzzleUITests.swift */; };
+		212B8DDB2077E9A100097EE0 /* LetterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212B8DDA2077E9A100097EE0 /* LetterButton.swift */; };
+		212B8DDD2077F6AB00097EE0 /* CrosswordBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212B8DDC2077F6AB00097EE0 /* CrosswordBoard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		212B8DC82077E96400097EE0 /* CrosswordPuzzleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrosswordPuzzleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		212B8DCC2077E96400097EE0 /* CrosswordPuzzleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosswordPuzzleUITests.swift; sourceTree = "<group>"; };
 		212B8DCE2077E96400097EE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		212B8DDA2077E9A100097EE0 /* LetterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterButton.swift; sourceTree = "<group>"; };
+		212B8DDC2077F6AB00097EE0 /* CrosswordBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosswordBoard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				212B8DB32077E96400097EE0 /* Assets.xcassets */,
 				212B8DB52077E96400097EE0 /* LaunchScreen.storyboard */,
 				212B8DB82077E96400097EE0 /* Info.plist */,
+				212B8DDA2077E9A100097EE0 /* LetterButton.swift */,
+				212B8DDC2077F6AB00097EE0 /* CrosswordBoard.swift */,
 			);
 			path = CrosswordPuzzle;
 			sourceTree = "<group>";
@@ -256,6 +262,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				212B8DDB2077E9A100097EE0 /* LetterButton.swift in Sources */,
+				212B8DDD2077F6AB00097EE0 /* CrosswordBoard.swift in Sources */,
 				212B8DAF2077E96200097EE0 /* ViewController.swift in Sources */,
 				212B8DAD2077E96200097EE0 /* AppDelegate.swift in Sources */,
 			);

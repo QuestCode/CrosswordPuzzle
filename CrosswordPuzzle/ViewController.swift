@@ -12,7 +12,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        view.backgroundColor = .black
+        
+//        let margins = view.layoutMarginsGuide
+        
+        let crossword = CrosswordBoard(frame: CGRect(x: 0, y: 30, width: view.frame.width, height: view.frame.height/2))
+        
+        view.addSubview(crossword)
     }
 
     override func didReceiveMemoryWarning() {
