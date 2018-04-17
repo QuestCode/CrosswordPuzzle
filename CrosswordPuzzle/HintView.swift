@@ -22,7 +22,7 @@ class HintView: UIView {
     
     public var bgColor: UIColor = UIColor.black {
         didSet {
-            setupView()
+            self.backgroundColor = bgColor
         }
     }
     
@@ -30,8 +30,6 @@ class HintView: UIView {
     private let swipeLeft = UISwipeGestureRecognizer()
     
     private func setupView() {
-        self.backgroundColor = bgColor
-        
         let ciColor = CIColor(color: bgColor)
         
         let newRed = 1.0 - ciColor.red
@@ -39,6 +37,13 @@ class HintView: UIView {
         let newBlue = 1.0 - ciColor.blue
         
         let textColor = UIColor(red: newRed, green: newGreen, blue: newBlue, alpha: 1.0)
+        
+        self.backgroundColor = bgColor
+        self.layer.borderWidth = 2
+        self.layer.borderColor = textColor.cgColor
+        self.layer.cornerRadius = 10
+        self.layer.masksToBounds = true
+        
         
         if hints.count > 0 {
             let hint = hints[currentIndex]

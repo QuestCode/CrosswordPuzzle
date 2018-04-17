@@ -30,13 +30,13 @@ class LetterButton: UIButton {
     
     public var title: String = "" {
         didSet {
-            setupButton()
+            self.setTitle(title, for: .normal)
         }
     }
     
     public var titleColor: UIColor = UIColor.black {
         didSet {
-            setupButton()
+            self.setTitleColor(titleColor, for: .normal)
         }
     }
     
@@ -48,13 +48,13 @@ class LetterButton: UIButton {
     
     public var borderColor: UIColor = UIColor.blue {
         didSet {
-            setupButton()
+            self.layer.borderColor = borderColor.cgColor
         }
     }
     
     public var bgColor: UIColor = UIColor.white {
         didSet {
-            setupButton()
+            self.backgroundColor = bgColor
         }
     }
     

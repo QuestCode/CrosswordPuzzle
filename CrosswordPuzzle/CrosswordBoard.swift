@@ -8,10 +8,22 @@
 
 import UIKit
 
+protocol CrosswordBoardDelegate {
+    func set(selectedBttn: LetterButton)
+}
+
 class CrosswordBoard: UIView {
     
+    var delegate: CrosswordBoardDelegate!
+    
     var vertStackView = UIStackView()
-    var rowButtons: [LetterButton] = [LetterButton]()
+    
+    private var selectedBttns: [LetterButton] = [LetterButton]()
+    private var rowButtons: [LetterButton] = [LetterButton]()
+    
+    public var selectedRow: Int = 0
+    public var selectedColumn: Int = 0
+    
     
     public var boardSize: Int = 10 {
         didSet{
@@ -32,7 +44,6 @@ class CrosswordBoard: UIView {
     
     
     private func setupView() {
-        
 
         vertStackView.axis = .vertical
         vertStackView.distribution = .fillEqually
@@ -43,6 +54,7 @@ class CrosswordBoard: UIView {
         vertStackView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         vertStackView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         vertStackView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        
         
         for m in 0..<boardSize {
             rowButtons.removeAll()
@@ -61,15 +73,17 @@ class CrosswordBoard: UIView {
                  *                                       *
                  *****************************************/
                 
-                if m % 3 == 0 && n % 4 == 1 {
+                if m % 2 == 0 && n % 4 == 0 {
                     bttn.title = ""
                 } else if m % 3 == 1 {
                     bttn.wordNumber = "\(m)"
                     bttn.title = "A"
                 }
+                
                 if bttn.title == "" {
-                    bttn.bgColor = UIColor.black
-                    bttn.borderColor = UIColor.black
+                    bttn.isEnabled = false
+                    bttn.bgColor = UIColor.clear
+                    bttn.borderColor = UIColor.clear
                 }
                 
                 
@@ -91,15 +105,26 @@ class CrosswordBoard: UIView {
         rowButtons.removeAll()
     }
     
-    @objc private func bttnClicked(_ sender: LetterButton) {
-        if sender.title == sender.shouldBeTitle {
-            sender.borderColor = UIColor.green
-            sender.title = "H"
-        } else {
-            sender.borderColor = UIColor.red
-            sender.title = "A"
+    private func checkForActiveBttns(selectedBttns:[LetterButton]) {
+        for bttn in selectedBttns {
+            if bttn.isSelected == true {
+                bttn.isSelected = false
+                bttn.bgColor = .white
+                bttn.borderColor = UIColor(rgb: 0x89CFF0)
+            }
         }
-        print("Row: \(sender.rowNumber) Column: \(sender.columnNumber)")
+        self.selectedBttns.removeAll()
+    }
+    
+    @objc private func bttnClicked(_ sender: LetterButton) {
+        checkForActiveBttns(selectedBttns: selectedBttns)
+        sender.isSelected = true
+        selectedRow = sender.rowNumber
+        selectedColumn = sender.columnNumber
+        
+        selectedBttns.append(sender)
+        
+        delegate.set(selectedBttn: sender)
     }
     
 

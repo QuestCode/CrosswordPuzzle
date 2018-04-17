@@ -9,8 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
+    var crosswordBoard: CrosswordBoard!
     var hintView: HintView!
+    var keyboard: CrossKeyboard!
     
     
     let hints = [Hint(number: 1, info: "Latest Football Champions"),Hint(number: 2, info: "Fastest Linebacker"),Hint(number: 3, info: "Philadelphia Basketball Team")]
@@ -19,17 +20,36 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .black
         
-//        let margins = view.layoutMarginsGuide
+        let imageView = UIImageView(frame: view.frame)
+        imageView.image = #imageLiteral(resourceName: "beach")
+        view.addSubview(imageView)
         
-        let crossword = CrosswordBoard(frame: CGRect(x: 0, y: 30, width: view.frame.width, height: view.frame.height/2))
+        crosswordBoard = CrosswordBoard()
+        crosswordBoard.delegate = self
         
-        hintView = HintView(frame: CGRect(x: 0, y: view.frame.height/2 + 30, width: view.frame.width, height: view.frame.height/8))
-        hintView.bgColor = UIColor(rgb: 0xa9a9a9)
+        hintView = HintView()
+        hintView.bgColor = UIColor.clear
         hintView.hints = hints
         
         
-        view.addSubview(hintView)
-        view.addSubview(crossword)
+        
+        keyboard = CrossKeyboard()
+        keyboard.bgColor = .purple
+    
+        
+        let margins = view.layoutMarginsGuide
+        let vertStackView = UIStackView(arrangedSubviews: [crosswordBoard,hintView,keyboard])
+        vertStackView.distribution = .equalCentering
+        vertStackView.alignment = .fill
+        vertStackView.axis = .vertical
+        vertStackView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(vertStackView)
+        
+        
+        vertStackView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        vertStackView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        vertStackView.topAnchor.constraint(equalTo: margins.topAnchor).isActive = true
+        vertStackView.bottomAnchor.constraint(equalTo: margins.bottomAnchor).isActive = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,5 +57,16 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+}
+
+
+extension ViewController: CrosswordBoardDelegate {
+    func set(selectedBttn: LetterButton) {
+        selectedBttn.bgColor = UIColor(rgb: 0x89CFF0)
+        selectedBttn.borderColor = .white
+        keyboard.letterBttn = selectedBttn
+    }
+    
+    
 }
 
