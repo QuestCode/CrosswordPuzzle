@@ -25,29 +25,34 @@ class ViewController: UIViewController {
         view.addSubview(imageView)
         
         crosswordBoard = CrosswordBoard()
+        crosswordBoard.boardSize = 13
+        crosswordBoard.setContentHuggingPriority(.defaultHigh, for: .vertical)
         crosswordBoard.delegate = self
         
         hintView = HintView()
+        hintView.setContentHuggingPriority(.defaultHigh, for: .vertical)
         hintView.bgColor = UIColor.clear
         hintView.hints = hints
-        
+
         
         
         keyboard = CrossKeyboard()
-        keyboard.bgColor = .purple
+        keyboard.setContentHuggingPriority(.defaultLow, for: .vertical)
+        keyboard.bgColor = .clear
     
         
         let margins = view.layoutMarginsGuide
         let vertStackView = UIStackView(arrangedSubviews: [crosswordBoard,hintView,keyboard])
-        vertStackView.distribution = .equalCentering
-        vertStackView.alignment = .fill
+        vertStackView.distribution = .fill
+        vertStackView.spacing = 15
+//        vertStackView.alignment = .fill
         vertStackView.axis = .vertical
         vertStackView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(vertStackView)
         
         
-        vertStackView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        vertStackView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        vertStackView.leftAnchor.constraint(equalTo: view.leftAnchor,constant: 5).isActive = true
+        vertStackView.rightAnchor.constraint(equalTo: view.rightAnchor,constant: -5).isActive = true
         vertStackView.topAnchor.constraint(equalTo: margins.topAnchor).isActive = true
         vertStackView.bottomAnchor.constraint(equalTo: margins.bottomAnchor).isActive = true
     }

@@ -10,6 +10,7 @@ import UIKit
 
 class LetterButton: UIButton {
     
+    
     public var rowNumber: Int = 0 {
         didSet{
             setupButton()

@@ -19,6 +19,7 @@
 		21497E9C20855F0A00E0F282 /* HintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21497E9B20855F0A00E0F282 /* HintView.swift */; };
 		21497E9F2085774600E0F282 /* Hint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21497E9E2085774600E0F282 /* Hint.swift */; };
 		21497EA120858D4100E0F282 /* CrossKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21497EA020858D4100E0F282 /* CrossKeyboard.swift */; };
+		21497EA320865D8D00E0F282 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21497EA220865D8D00E0F282 /* Word.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		21497E9B20855F0A00E0F282 /* HintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintView.swift; sourceTree = "<group>"; };
 		21497E9E2085774600E0F282 /* Hint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hint.swift; sourceTree = "<group>"; };
 		21497EA020858D4100E0F282 /* CrossKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossKeyboard.swift; sourceTree = "<group>"; };
+		21497EA220865D8D00E0F282 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,8 @@
 				21497E9B20855F0A00E0F282 /* HintView.swift */,
 				21497EA020858D4100E0F282 /* CrossKeyboard.swift */,
 				21497E9E2085774600E0F282 /* Hint.swift */,
+				21497EA220865D8D00E0F282 /* Word.swift */,
+				21497EA4208664CB00E0F282 /* Levels */,
 			);
 			path = CrosswordPuzzle;
 			sourceTree = "<group>";
@@ -146,6 +150,13 @@
 				212B8DB52077E96400097EE0 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		21497EA4208664CB00E0F282 /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Levels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21497E9F2085774600E0F282 /* Hint.swift in Sources */,
+				21497EA320865D8D00E0F282 /* Word.swift in Sources */,
 				21497EA120858D4100E0F282 /* CrossKeyboard.swift in Sources */,
 				212B8DDB2077E9A100097EE0 /* LetterButton.swift in Sources */,
 				21497E9C20855F0A00E0F282 /* HintView.swift in Sources */,

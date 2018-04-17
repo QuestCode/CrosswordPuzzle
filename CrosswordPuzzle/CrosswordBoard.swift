@@ -19,7 +19,8 @@ class CrosswordBoard: UIView {
     var vertStackView = UIStackView()
     
     private var selectedBttns: [LetterButton] = [LetterButton]()
-    private var rowButtons: [LetterButton] = [LetterButton]()
+    
+    public var lines: [String] = ["pumpernickel-","---a-------e-","---l-------a-","caramel-f--v-","o--d----j--e-","r--i----o--n-","a-snicker----","l----o--dawn-","-----d-------","----harp-----","-------------","-------------","-------------"]
     
     public var selectedRow: Int = 0
     public var selectedColumn: Int = 0
@@ -55,35 +56,38 @@ class CrosswordBoard: UIView {
         vertStackView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         vertStackView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         
+        var rowButtons: [LetterButton] = [LetterButton]()
         
         for m in 0..<boardSize {
+            let line = lines[m].uppercased()
+            let characters = Array(line)
             rowButtons.removeAll()
             for n in 0..<boardSize {
                 let bttn = LetterButton()
                 bttn.buttonWidthHeight = self.frame.height /  (CGFloat)(boardSize)
                 bttn.columnNumber = n
                 bttn.rowNumber = m
-                bttn.title = "H"
-                bttn.shouldBeTitle = "A"
                 bttn.borderColor = UIColor(rgb: 0x89CFF0)
-                
+                bttn.shouldBeTitle = "\(characters[n])"
+                bttn.title = "\(characters[n])"
                 /*****************************************
                  *                                       *
                  *                TESTING                *
                  *                                       *
                  *****************************************/
                 
-                if m % 2 == 0 && n % 4 == 0 {
+                if bttn.shouldBeTitle == "-" {
                     bttn.title = ""
-                } else if m % 3 == 1 {
-                    bttn.wordNumber = "\(m)"
-                    bttn.title = "A"
-                }
-                
-                if bttn.title == "" {
                     bttn.isEnabled = false
                     bttn.bgColor = UIColor.clear
                     bttn.borderColor = UIColor.clear
+                }
+                
+                
+                
+                // Correct String
+                if bttn.shouldBeTitle == bttn.title {
+                    bttn.borderColor = UIColor(rgb: 0x228B22)
                 }
                 
                 
@@ -102,7 +106,7 @@ class CrosswordBoard: UIView {
         for view in vertStackView.arrangedSubviews {
             view.removeFromSuperview()
         }
-        rowButtons.removeAll()
+//        rowButtons.removeAll()
     }
     
     private func checkForActiveBttns(selectedBttns:[LetterButton]) {
