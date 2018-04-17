@@ -12,6 +12,13 @@ class HintView: UIView {
     
     private let hintLabel = UILabel()
     private let wordNumberLabel = UILabel()
+    private var currentIndex = 0
+    
+    public var hints: [Hint] = [Hint]() {
+        didSet {
+            setupView()
+        }
+    }
     
     public var bgColor: UIColor = UIColor.black {
         didSet {
@@ -19,20 +26,8 @@ class HintView: UIView {
         }
     }
     
-    public var wordNumber: String = "" {
-        didSet {
-            setupView()
-        }
-    }
-    
-    public var hint: String = "" {
-        didSet {
-            setupView()
-        }
-    }
-    
-    
-    
+    private let swipeRight = UISwipeGestureRecognizer()
+    private let swipeLeft = UISwipeGestureRecognizer()
     
     private func setupView() {
         self.backgroundColor = bgColor
@@ -45,30 +40,61 @@ class HintView: UIView {
         
         let textColor = UIColor(red: newRed, green: newGreen, blue: newBlue, alpha: 1.0)
         
-        // Word Number
-        wordNumberLabel.text = wordNumber
-        wordNumberLabel.textColor = textColor
-        wordNumberLabel.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(wordNumberLabel)
+        if hints.count > 0 {
+            let hint = hints[currentIndex]
+            
+            // Word Number
+            wordNumberLabel.text = "\(hint.number)"
+            wordNumberLabel.textColor = textColor
+            wordNumberLabel.translatesAutoresizingMaskIntoConstraints = false
+            addSubview(wordNumberLabel)
+            
+            wordNumberLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 50).isActive = true
+            wordNumberLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+            wordNumberLabel.widthAnchor.constraint(equalToConstant: 30).isActive = true
+            wordNumberLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
+            
+            
+            // Hint Label
+            hintLabel.textColor = textColor
+            hintLabel.numberOfLines = 0
+            hintLabel.textAlignment = .center
+            hintLabel.text = hint.info
+            hintLabel.translatesAutoresizingMaskIntoConstraints = false
+            addSubview(hintLabel)
+            
+            hintLabel.leftAnchor.constraint(equalTo: wordNumberLabel.rightAnchor, constant: 10).isActive = true
+            hintLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -50).isActive = true
+            hintLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20).isActive = true
+            hintLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20).isActive = true
+            
+            
+            swipeRight.addTarget(self, action: #selector(swipeGesture(_:)))
+            swipeRight.direction = UISwipeGestureRecognizerDirection.right
+            addGestureRecognizer(swipeRight)
+            
+            swipeLeft.addTarget(self, action: #selector(swipeGesture(_:)))
+            swipeLeft.direction = UISwipeGestureRecognizerDirection.left
+            addGestureRecognizer(swipeLeft)
+        }
+    }
+    @objc private func swipeGesture(_ sender: UISwipeGestureRecognizer) {
         
-        wordNumberLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 50).isActive = true
-        wordNumberLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        wordNumberLabel.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        wordNumberLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        
-        
-        // Hint Label
-        hintLabel.textColor = textColor
-        hintLabel.numberOfLines = 0
-        hintLabel.textAlignment = .center
-        hintLabel.text = hint
-        hintLabel.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(hintLabel)
-        
-        hintLabel.leftAnchor.constraint(equalTo: wordNumberLabel.rightAnchor, constant: 10).isActive = true
-        hintLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -50).isActive = true
-        hintLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20).isActive = true
-        hintLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20).isActive = true
+        if sender.direction == .right {
+            currentIndex += 1
+            if currentIndex >= hints.count {
+                currentIndex = 0
+            }
+            wordNumberLabel.text = "\(hints[currentIndex].number)"
+            hintLabel.text = hints[currentIndex].info
+        } else if sender.direction == .left {
+            currentIndex -= 1
+            if currentIndex < 0 {
+                currentIndex = hints.count - 1
+            }
+            wordNumberLabel.text = "\(hints[currentIndex].number)"
+            hintLabel.text = hints[currentIndex].info
+        }
     }
     
 }

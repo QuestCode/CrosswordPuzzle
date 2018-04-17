@@ -17,6 +17,7 @@
 		212B8DDB2077E9A100097EE0 /* LetterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212B8DDA2077E9A100097EE0 /* LetterButton.swift */; };
 		212B8DDD2077F6AB00097EE0 /* CrosswordBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212B8DDC2077F6AB00097EE0 /* CrosswordBoard.swift */; };
 		21497E9C20855F0A00E0F282 /* HintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21497E9B20855F0A00E0F282 /* HintView.swift */; };
+		21497E9F2085774600E0F282 /* Hint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21497E9E2085774600E0F282 /* Hint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		212B8DDA2077E9A100097EE0 /* LetterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterButton.swift; sourceTree = "<group>"; };
 		212B8DDC2077F6AB00097EE0 /* CrosswordBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosswordBoard.swift; sourceTree = "<group>"; };
 		21497E9B20855F0A00E0F282 /* HintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintView.swift; sourceTree = "<group>"; };
+		21497E9E2085774600E0F282 /* Hint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				212B8DDA2077E9A100097EE0 /* LetterButton.swift */,
 				212B8DDC2077F6AB00097EE0 /* CrosswordBoard.swift */,
 				21497E9B20855F0A00E0F282 /* HintView.swift */,
+				21497E9E2085774600E0F282 /* Hint.swift */,
 			);
 			path = CrosswordPuzzle;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21497E9F2085774600E0F282 /* Hint.swift in Sources */,
 				212B8DDB2077E9A100097EE0 /* LetterButton.swift in Sources */,
 				21497E9C20855F0A00E0F282 /* HintView.swift in Sources */,
 				212B8DDD2077F6AB00097EE0 /* CrosswordBoard.swift in Sources */,
