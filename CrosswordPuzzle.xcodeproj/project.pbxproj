@@ -20,6 +20,9 @@
 		21497E9F2085774600E0F282 /* Hint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21497E9E2085774600E0F282 /* Hint.swift */; };
 		21497EA120858D4100E0F282 /* CrossKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21497EA020858D4100E0F282 /* CrossKeyboard.swift */; };
 		21497EA320865D8D00E0F282 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21497EA220865D8D00E0F282 /* Word.swift */; };
+		21497EAE2086A53B00E0F282 /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21497EAD2086A53B00E0F282 /* Puzzle.swift */; };
+		21497EB22086B41A00E0F282 /* level1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21497EB12086B41A00E0F282 /* level1.plist */; };
+		21497EB42086B48900E0F282 /* Crossword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21497EB32086B48900E0F282 /* Crossword.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		21497E9E2085774600E0F282 /* Hint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hint.swift; sourceTree = "<group>"; };
 		21497EA020858D4100E0F282 /* CrossKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossKeyboard.swift; sourceTree = "<group>"; };
 		21497EA220865D8D00E0F282 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		21497EAD2086A53B00E0F282 /* Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puzzle.swift; sourceTree = "<group>"; };
+		21497EB12086B41A00E0F282 /* level1.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = level1.plist; sourceTree = "<group>"; };
+		21497EB32086B48900E0F282 /* Crossword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crossword.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,8 +122,10 @@
 				212B8DB82077E96400097EE0 /* Info.plist */,
 				212B8DDA2077E9A100097EE0 /* LetterButton.swift */,
 				212B8DDC2077F6AB00097EE0 /* CrosswordBoard.swift */,
+				21497EAD2086A53B00E0F282 /* Puzzle.swift */,
 				21497E9B20855F0A00E0F282 /* HintView.swift */,
 				21497EA020858D4100E0F282 /* CrossKeyboard.swift */,
+				21497EB32086B48900E0F282 /* Crossword.swift */,
 				21497E9E2085774600E0F282 /* Hint.swift */,
 				21497EA220865D8D00E0F282 /* Word.swift */,
 				21497EA4208664CB00E0F282 /* Levels */,
@@ -155,6 +163,7 @@
 		21497EA4208664CB00E0F282 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
+				21497EB12086B41A00E0F282 /* level1.plist */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -266,6 +275,7 @@
 				212B8DB72077E96400097EE0 /* LaunchScreen.storyboard in Resources */,
 				212B8DB42077E96400097EE0 /* Assets.xcassets in Resources */,
 				212B8DB22077E96200097EE0 /* Main.storyboard in Resources */,
+				21497EB22086B41A00E0F282 /* level1.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,12 +300,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21497EB42086B48900E0F282 /* Crossword.swift in Sources */,
 				21497E9F2085774600E0F282 /* Hint.swift in Sources */,
 				21497EA320865D8D00E0F282 /* Word.swift in Sources */,
 				21497EA120858D4100E0F282 /* CrossKeyboard.swift in Sources */,
 				212B8DDB2077E9A100097EE0 /* LetterButton.swift in Sources */,
 				21497E9C20855F0A00E0F282 /* HintView.swift in Sources */,
 				212B8DDD2077F6AB00097EE0 /* CrosswordBoard.swift in Sources */,
+				21497EAE2086A53B00E0F282 /* Puzzle.swift in Sources */,
 				212B8DAF2077E96200097EE0 /* ViewController.swift in Sources */,
 				212B8DAD2077E96200097EE0 /* AppDelegate.swift in Sources */,
 			);

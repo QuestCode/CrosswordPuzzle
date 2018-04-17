@@ -69,7 +69,6 @@ class CrosswordBoard: UIView {
                 bttn.rowNumber = m
                 bttn.borderColor = UIColor(rgb: 0x89CFF0)
                 bttn.shouldBeTitle = "\(characters[n])"
-                bttn.title = "\(characters[n])"
                 /*****************************************
                  *                                       *
                  *                TESTING                *
@@ -77,7 +76,6 @@ class CrosswordBoard: UIView {
                  *****************************************/
                 
                 if bttn.shouldBeTitle == "-" {
-                    bttn.title = ""
                     bttn.isEnabled = false
                     bttn.bgColor = UIColor.clear
                     bttn.borderColor = UIColor.clear

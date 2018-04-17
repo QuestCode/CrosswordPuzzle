@@ -8,13 +8,22 @@
 
 import UIKit
 
-class Hint: NSObject {
+class Hint: NSObject, NSCoding {
     var number: Int = 1
     var info: String = ""
     
-    init(number: Int,info: String) {
+    init(info: String) {
         super.init()
-        self.number = number
         self.info = info
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(number, forKey: "number")
+        aCoder.encode(info, forKey: "info")
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        self.number = aDecoder.decodeInteger(forKey: "number")
+        self.info = aDecoder.decodeObject(forKey: "info") as! String
     }
 }
