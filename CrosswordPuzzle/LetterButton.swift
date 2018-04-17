@@ -22,6 +22,12 @@ class LetterButton: UIButton {
         }
     }
     
+    public var shouldBeTitle = "" {
+        didSet {
+            setupButton()
+        }
+    }
+    
     public var title: String = "" {
         didSet {
             setupButton()
@@ -87,6 +93,8 @@ class LetterButton: UIButton {
         numberLabel.topAnchor.constraint(equalTo: topAnchor,constant: 5).isActive = true
         numberLabel.widthAnchor.constraint(equalToConstant: 10).isActive = true
         numberLabel.heightAnchor.constraint(equalToConstant: 10).isActive = true
+        
+        
         
         self.setTitle(title, for: .normal)
         self.setTitleColor(titleColor, for: .normal)

@@ -52,6 +52,7 @@ class CrosswordBoard: UIView {
                 bttn.columnNumber = n
                 bttn.rowNumber = m
                 bttn.title = "H"
+                bttn.shouldBeTitle = "A"
                 bttn.borderColor = UIColor(rgb: 0x89CFF0)
                 
                 /*****************************************
@@ -64,6 +65,7 @@ class CrosswordBoard: UIView {
                     bttn.title = ""
                 } else if m % 3 == 1 {
                     bttn.wordNumber = "\(m)"
+                    bttn.title = "A"
                 }
                 if bttn.title == "" {
                     bttn.bgColor = UIColor.black
@@ -90,8 +92,15 @@ class CrosswordBoard: UIView {
     }
     
     @objc private func bttnClicked(_ sender: LetterButton) {
-        sender.setTitle("A", for: .normal)
+        if sender.title == sender.shouldBeTitle {
+            sender.borderColor = UIColor.green
+            sender.title = "H"
+        } else {
+            sender.borderColor = UIColor.red
+            sender.title = "A"
+        }
         print("Row: \(sender.rowNumber) Column: \(sender.columnNumber)")
     }
+    
 
 }
