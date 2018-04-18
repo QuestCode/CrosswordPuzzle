@@ -12,26 +12,32 @@ class ViewController: UIViewController {
     var crosswordBoard: CrosswordBoard!
     var hintView: HintView!
     var keyboard: CrossKeyboard!
-    
-    
-    let hints = [Hint(number: 1, info: "Latest Football Champions"),Hint(number: 2, info: "Fastest Linebacker"),Hint(number: 3, info: "Philadelphia Basketball Team")]
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .black
+        
+        
+        let crosswordStore = CrosswordStore()
+        
         
         let imageView = UIImageView(frame: view.frame)
         imageView.image = #imageLiteral(resourceName: "beach")
         view.addSubview(imageView)
         
         crosswordBoard = CrosswordBoard()
-        crosswordBoard.boardSize = 13
+        crosswordBoard.lines = crosswordStore.crossword.lines
+        crosswordBoard.boardSize = 10
         crosswordBoard.setContentHuggingPriority(.defaultHigh, for: .vertical)
         crosswordBoard.delegate = self
         
         hintView = HintView()
         hintView.setContentHuggingPriority(.defaultHigh, for: .vertical)
         hintView.bgColor = UIColor.clear
+        var hints = [Hint]()
+        for word in crosswordStore.crossword.allWords {
+            hints.append(word.hint)
+        }
         hintView.hints = hints
 
         

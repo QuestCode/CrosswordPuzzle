@@ -20,7 +20,11 @@ class CrosswordBoard: UIView {
     
     private var selectedBttns: [LetterButton] = [LetterButton]()
     
-    public var lines: [String] = ["pumpernickel-","---a-------e-","---l-------a-","caramel-f--v-","o--d----j--e-","r--i----o--n-","a-snicker----","l----o--dawn-","-----d-------","----harp-----","-------------","-------------","-------------"]
+    public var lines: [String] = [String]() {
+        didSet {
+            setupView()
+        }
+    }
     
     public var selectedRow: Int = 0
     public var selectedColumn: Int = 0
@@ -59,43 +63,47 @@ class CrosswordBoard: UIView {
         var rowButtons: [LetterButton] = [LetterButton]()
         
         for m in 0..<boardSize {
-            let line = lines[m].uppercased()
-            let characters = Array(line)
-            rowButtons.removeAll()
-            for n in 0..<boardSize {
-                let bttn = LetterButton()
-                bttn.buttonWidthHeight = self.frame.height /  (CGFloat)(boardSize)
-                bttn.columnNumber = n
-                bttn.rowNumber = m
-                bttn.borderColor = UIColor(rgb: 0x89CFF0)
-                bttn.shouldBeTitle = "\(characters[n])"
-                /*****************************************
-                 *                                       *
-                 *                TESTING                *
-                 *                                       *
-                 *****************************************/
-                
-                if bttn.shouldBeTitle == "-" {
-                    bttn.isEnabled = false
-                    bttn.bgColor = UIColor.clear
-                    bttn.borderColor = UIColor.clear
+            if lines.count > 0 {
+                let line = lines[m].uppercased()
+                let characters = Array(line)
+                rowButtons.removeAll()
+                for n in 0..<boardSize {
+                    let bttn = LetterButton()
+                    bttn.buttonWidthHeight = self.frame.height /  (CGFloat)(boardSize)
+                    bttn.columnNumber = n
+                    bttn.rowNumber = m
+                    bttn.borderColor = UIColor(rgb: 0x89CFF0)
+                    bttn.shouldBeTitle = "\(characters[n])"
+                    bttn.title = "\(characters[n])"
+                    /*****************************************
+                     *                                       *
+                     *                TESTING                *
+                     *                                       *
+                     *****************************************/
+                    
+                    if bttn.shouldBeTitle == "-" {
+                        bttn.title = ""
+                        bttn.isEnabled = false
+                        bttn.bgColor = UIColor.clear
+                        bttn.borderColor = UIColor.clear
+                    }
+                    
+                    
+                    
+                    // Correct String
+                    if bttn.shouldBeTitle == bttn.title {
+                        bttn.borderColor = UIColor(rgb: 0x228B22)
+                    }
+                    
+                    
+                    bttn.addTarget(self, action: #selector(bttnClicked(_:)), for: .touchUpInside)
+                    rowButtons.append(bttn)
                 }
-                
-                
-                
-                // Correct String
-                if bttn.shouldBeTitle == bttn.title {
-                    bttn.borderColor = UIColor(rgb: 0x228B22)
-                }
-                
-                
-                bttn.addTarget(self, action: #selector(bttnClicked(_:)), for: .touchUpInside)
-                rowButtons.append(bttn)
+                let stackView = UIStackView(arrangedSubviews: rowButtons)
+                stackView.axis = .horizontal
+                stackView.distribution = .fillEqually
+                vertStackView.addArrangedSubview(stackView)
             }
-            let stackView = UIStackView(arrangedSubviews: rowButtons)
-            stackView.axis = .horizontal
-            stackView.distribution = .fillEqually
-            vertStackView.addArrangedSubview(stackView)
         }
             
     }
