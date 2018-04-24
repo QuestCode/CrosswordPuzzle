@@ -15,9 +15,10 @@ public enum Direction {
 
 class Word: NSObject,NSCoding {
     public var word = ""
+    public var index = 1 
     public var column = 0
     public var row = 0
-    public var direction: String = "vertical"
+    public var direction: String = ""
     private var directionEnum: Direction = .vertical
     public var hint: Hint = Hint(info: "")
     
@@ -25,9 +26,10 @@ class Word: NSObject,NSCoding {
     public var columnIndexes = [Int]()
     
     
-    init(word: String,column: Int, row: Int, direction: Direction) {
+    init(word: String,index: Int,column: Int, row: Int, direction: Direction) {
         super.init()
         self.word = word
+        self.index = index
         self.column = column
         self.row = row
         self.directionEnum = direction
@@ -40,6 +42,7 @@ class Word: NSObject,NSCoding {
         aCoder.encode(row, forKey: "row")
         aCoder.encode(direction, forKey: "direction")
         aCoder.encode(hint, forKey: "hint")
+        aCoder.encode(index, forKey: "index")
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -48,25 +51,16 @@ class Word: NSObject,NSCoding {
         self.row = aDecoder.decodeInteger(forKey: "row")
         self.direction = aDecoder.decodeObject(forKey: "direction") as! String
         self.hint = aDecoder.decodeObject(forKey: "hint") as! Hint
+        self.index = aDecoder.decodeInteger(forKey: "index")
     }
 
     private func setDirection() {
         if directionEnum == .horizontal {
             direction = "horizontal"
-            var i = 0
-            for _ in word {
-                rowIndexes.append(row)
-                columnIndexes.append(i)
-                i += 1
-            }
+            hint.numberDirection = "\(index) ➡"
         } else {
             direction = "vertical"
-            var i = 0
-            for _ in word {
-                rowIndexes.append(i)
-                columnIndexes.append(column)
-                i += 1
-            }
+            hint.numberDirection = "\(index) ⬇"
         }
     }
     

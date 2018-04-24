@@ -9,7 +9,7 @@
 import UIKit
 
 class Hint: NSObject, NSCoding {
-    var number: Int = 1
+    var numberDirection: String = ""
     var info: String = ""
     
     init(info: String) {
@@ -18,12 +18,12 @@ class Hint: NSObject, NSCoding {
     }
     
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(number, forKey: "number")
+        aCoder.encode(numberDirection, forKey: "numberDirection")
         aCoder.encode(info, forKey: "info")
     }
     
     required init?(coder aDecoder: NSCoder) {
-        self.number = aDecoder.decodeInteger(forKey: "number")
+        self.numberDirection = aDecoder.decodeObject(forKey: "numberDirection") as! String
         self.info = aDecoder.decodeObject(forKey: "info") as! String
     }
 }

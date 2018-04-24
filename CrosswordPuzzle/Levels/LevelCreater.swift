@@ -18,41 +18,38 @@ class LevelCreater: NSObject {
         
         let result = crosswordsGenerator.result
         var words = [Word]()
-        
+        var i = 1
         for word in result{
             if word.direction == .horizontal {
-                let newWord = Word(word: word.word, column: word.column, row: word.row, direction: .horizontal)
+                let newWord = Word(word: word.word,index: i,
+                                   column: word.column, row: word.row,
+                                   direction: .horizontal)
                 words.append(newWord)
             } else {
-                let newWord = Word(word: word.word, column: word.column, row: word.row, direction: .vertical)
+                let newWord = Word(word: word.word,index: i,
+                                   column: word.column, row: word.row,
+                                   direction: .vertical)
                 words.append(newWord)
             }
+            i += 1
             print("\(word.word)")
         }
-        
         for word in words {
             switch word.word {
             case "CATCHER":
                 word.hint.info = "Player that crouches behind home plate"
-                word.hint.number = 1
             case "COMPETE":
                 word.hint.info = "Take part in a contest"
-                word.hint.number = 2
             case "PITCH":
                 word.hint.info = "Throw (the ball) for the batter to try to hit"
-                word.hint.number = 3
             case "COACH":
                 word.hint.info = "Person who trains an athlete"
-                word.hint.number = 4
             case "POLO":
                 word.hint.info = "Played on a horse"
-                word.hint.number = 5
             case "LAP":
                 word.hint.info = "One full circuit"
-                word.hint.number = 6
             case "CREW":
                 word.hint.info = "Group of people who work closely together"
-                word.hint.number = 6
             default:
                 break
             }

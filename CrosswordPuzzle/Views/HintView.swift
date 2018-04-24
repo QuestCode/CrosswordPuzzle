@@ -50,14 +50,14 @@ class HintView: UIView {
             let word = words[currentIndex]
             
             // Word Number
-            wordNumberLabel.text = "\(word.hint.number)"
+            wordNumberLabel.text = word.hint.numberDirection
             wordNumberLabel.textColor = textColor
             wordNumberLabel.translatesAutoresizingMaskIntoConstraints = false
             addSubview(wordNumberLabel)
             
             wordNumberLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 50).isActive = true
             wordNumberLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-            wordNumberLabel.widthAnchor.constraint(equalToConstant: 30).isActive = true
+            wordNumberLabel.widthAnchor.constraint(equalToConstant: 70).isActive = true
             wordNumberLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
             
             
@@ -91,14 +91,14 @@ class HintView: UIView {
             if currentIndex >= words.count {
                 currentIndex = 0
             }
-            wordNumberLabel.text = "\(words[currentIndex].hint.number)"
+            wordNumberLabel.text = words[currentIndex].hint.numberDirection
             hintLabel.text = words[currentIndex].hint.info
         } else if sender.direction == .left {
             currentIndex -= 1
             if currentIndex < 0 {
                 currentIndex = words.count - 1
             }
-            wordNumberLabel.text = "\(words[currentIndex].hint.number)"
+            wordNumberLabel.text = words[currentIndex].hint.numberDirection
             hintLabel.text = words[currentIndex].hint.info
         }
     }

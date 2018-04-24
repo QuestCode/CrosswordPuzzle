@@ -35,16 +35,12 @@ class ViewController: UIViewController {
         crosswordBoard.setContentHuggingPriority(.defaultHigh, for: .vertical)
         crosswordBoard.delegate = self
         
+        var words = [Word]()
+        for word in crosswordStore.crossword.allWords { words.append(word) }
         hintView = HintView()
         hintView.setContentHuggingPriority(.defaultHigh, for: .vertical)
         hintView.translatesAutoresizingMaskIntoConstraints = false
         hintView.bgColor = UIColor.clear
-        var words = [Word]()
-        for word in crosswordStore.crossword.allWords {
-            print("Hint: \(word.hint.info)")
-            
-            words.append(word)
-        }
         hintView.words = words
 
         
@@ -61,13 +57,12 @@ class ViewController: UIViewController {
         let vertStackView = UIStackView(arrangedSubviews: [crosswordBoard,hintView,keyboard])
         vertStackView.distribution = .fill
         vertStackView.spacing = 15
-//        vertStackView.alignment = .fill
         vertStackView.axis = .vertical
         vertStackView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(vertStackView)
         
         
-        hintView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        hintView.heightAnchor.constraint(equalToConstant: 100).isActive = true
         keyboard.heightAnchor.constraint(equalToConstant: 150).isActive = true
         
         vertStackView.leftAnchor.constraint(equalTo: view.leftAnchor,constant: 5).isActive = true

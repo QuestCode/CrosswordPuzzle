@@ -82,7 +82,6 @@ class CrosswordBoard: UIView {
                     bttn.rowNumber = m
                     bttn.borderColor = UIColor(rgb: 0x89CFF0)
                     bttn.shouldBeTitle = "\(characters[n])"
-//                    bttn.title = "\(characters[n])"
                     
                     
                     // Board button that have should be set to - should be inactive and should be invisible
@@ -96,7 +95,9 @@ class CrosswordBoard: UIView {
                     for word in words {
                         if word.column-1 == bttn.columnNumber && word.row-1 == bttn.rowNumber {
                             if bttn.wordNumber == "" {
-                                bttn.wordNumber = "\(word.hint.number)"
+                                bttn.wordNumber = "\(word.index)"
+                            } else {
+                                word.index = Int(bttn.wordNumber)!
                             }
                         }
                     }

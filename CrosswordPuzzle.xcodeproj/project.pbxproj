@@ -131,10 +131,7 @@
 				21497E9D208561CB00E0F282 /* Storyboard */,
 				212B8DB32077E96400097EE0 /* Assets.xcassets */,
 				212B8DB82077E96400097EE0 /* Info.plist */,
-				212B8DDA2077E9A100097EE0 /* LetterButton.swift */,
-				212B8DDC2077F6AB00097EE0 /* CrosswordBoard.swift */,
-				21497E9B20855F0A00E0F282 /* HintView.swift */,
-				21497EA020858D4100E0F282 /* CrossKeyboard.swift */,
+				21497F24208EE1DA00E0F282 /* Views */,
 				21497F23208EE0E100E0F282 /* Model */,
 				21497EA4208664CB00E0F282 /* Levels */,
 			);
@@ -197,6 +194,17 @@
 				21497EA220865D8D00E0F282 /* Word.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		21497F24208EE1DA00E0F282 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				212B8DDA2077E9A100097EE0 /* LetterButton.swift */,
+				212B8DDC2077F6AB00097EE0 /* CrosswordBoard.swift */,
+				21497E9B20855F0A00E0F282 /* HintView.swift */,
+				21497EA020858D4100E0F282 /* CrossKeyboard.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
