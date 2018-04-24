@@ -45,6 +45,7 @@ class HintView: UIView {
         self.layer.masksToBounds = true
         
         
+        
         if hints.count > 0 {
             let hint = hints[currentIndex]
             

@@ -14,7 +14,7 @@ class Hint: NSObject, NSCoding {
     
     init(info: String) {
         super.init()
-        self.info = info
+        self.info = info.uppercased()
     }
     
     func encode(with aCoder: NSCoder) {

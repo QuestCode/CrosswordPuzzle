@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol KeyboardDelegate {
+    func moveToNextIndex(selectedRow: Int,selectedColumn: Int)
+}
+
 class CrossKeyboard: UIView {
     
     public var letterBttn: LetterButton!
+    public var delegate: KeyboardDelegate!
     
     public var bgColor: UIColor = UIColor.black {
         didSet {
@@ -60,6 +65,7 @@ class CrossKeyboard: UIView {
         }
         let topRow = UIStackView(arrangedSubviews: topRowBttns)
         topRow.distribution = .equalCentering
+        topRow.spacing = 2
         topRow.axis = .horizontal
         
         var midRowBttns: [UIButton] = [UIButton]()
@@ -79,6 +85,7 @@ class CrossKeyboard: UIView {
         }
         let midRow = UIStackView(arrangedSubviews: midRowBttns)
         midRow.distribution = .equalCentering
+        midRow.spacing = 2
         midRow.axis = .horizontal
         
         var botRowBttns: [UIButton] = [UIButton]()
@@ -97,11 +104,13 @@ class CrossKeyboard: UIView {
             botRowBttns.append(bttn)
         }
         let botRow = UIStackView(arrangedSubviews: botRowBttns)
-        botRow.distribution = .fillEqually
+        botRow.distribution = .equalCentering
+        botRow.spacing = 2
         botRow.axis = .horizontal
         
         let vertStackView = UIStackView(arrangedSubviews: [topRow,midRow,botRow])
         vertStackView.distribution = .fillEqually
+        vertStackView.spacing = 2
         vertStackView.axis = .vertical
         vertStackView.alignment = .center
         vertStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -123,6 +132,7 @@ class CrossKeyboard: UIView {
             letterBttn.bgColor = .white
             letterBttn.borderColor = UIColor(rgb: 0x89CFF0)
             letterBttn.title = string
+            delegate.moveToNextIndex(selectedRow: letterBttn.rowNumber, selectedColumn: letterBttn.columnNumber)
         }
     }
 

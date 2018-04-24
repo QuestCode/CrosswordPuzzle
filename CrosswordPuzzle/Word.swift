@@ -21,12 +21,17 @@ class Word: NSObject,NSCoding {
     private var directionEnum: Direction = .vertical
     public var hint: Hint = Hint(info: "")
     
+    public var rowIndexes = [Int]()
+    public var columnIndexes = [Int]()
+    
+    
     init(word: String,column: Int, row: Int, direction: Direction) {
         super.init()
         self.word = word
         self.column = column
         self.row = row
         self.directionEnum = direction
+        self.setDirection()
     }
     
     func encode(with aCoder: NSCoder) {
@@ -44,4 +49,25 @@ class Word: NSObject,NSCoding {
         self.direction = aDecoder.decodeObject(forKey: "direction") as! String
         self.hint = aDecoder.decodeObject(forKey: "hint") as! Hint
     }
+
+    private func setDirection() {
+        if directionEnum == .horizontal {
+            direction = "horizontal"
+            var i = 0
+            for _ in word {
+                rowIndexes.append(row)
+                columnIndexes.append(i)
+                i += 1
+            }
+        } else {
+            direction = "vertical"
+            var i = 0
+            for _ in word {
+                rowIndexes.append(i)
+                columnIndexes.append(column)
+                i += 1
+            }
+        }
+    }
+    
 }

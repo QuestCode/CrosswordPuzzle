@@ -17,8 +17,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        let crosswordStore = CrosswordStore()
+        var crosswordStore = CrosswordStore()
+        if crosswordStore.crossword == nil {
+            let _ = LevelCreater()
+            crosswordStore = CrosswordStore()
+        }
         
         
         let imageView = UIImageView(frame: view.frame)
@@ -27,12 +30,14 @@ class ViewController: UIViewController {
         
         crosswordBoard = CrosswordBoard()
         crosswordBoard.lines = crosswordStore.crossword.lines
+        crosswordBoard.words = crosswordStore.crossword.allWords
         crosswordBoard.boardSize = 10
         crosswordBoard.setContentHuggingPriority(.defaultHigh, for: .vertical)
         crosswordBoard.delegate = self
         
         hintView = HintView()
         hintView.setContentHuggingPriority(.defaultHigh, for: .vertical)
+        hintView.translatesAutoresizingMaskIntoConstraints = false
         hintView.bgColor = UIColor.clear
         var hints = [Hint]()
         for word in crosswordStore.crossword.allWords {
@@ -43,8 +48,11 @@ class ViewController: UIViewController {
         
         
         keyboard = CrossKeyboard()
+        keyboard.delegate = self
+        keyboard.translatesAutoresizingMaskIntoConstraints = false
         keyboard.setContentHuggingPriority(.defaultLow, for: .vertical)
         keyboard.bgColor = .clear
+//        keyboard.letterColor = UIColor(rgb: 0x89CFF0)
     
         
         let margins = view.layoutMarginsGuide
@@ -56,6 +64,9 @@ class ViewController: UIViewController {
         vertStackView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(vertStackView)
         
+        
+        hintView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        keyboard.heightAnchor.constraint(equalToConstant: 150).isActive = true
         
         vertStackView.leftAnchor.constraint(equalTo: view.leftAnchor,constant: 5).isActive = true
         vertStackView.rightAnchor.constraint(equalTo: view.rightAnchor,constant: -5).isActive = true
@@ -71,13 +82,26 @@ class ViewController: UIViewController {
 }
 
 
-extension ViewController: CrosswordBoardDelegate {
+extension ViewController: CrosswordBoardDelegate, KeyboardDelegate {
     func set(selectedBttn: LetterButton) {
         selectedBttn.bgColor = UIColor(rgb: 0x89CFF0)
         selectedBttn.borderColor = .white
         keyboard.letterBttn = selectedBttn
     }
     
+    // Move to next button in row or column
+    func moveToNextIndex(selectedRow: Int,selectedColumn: Int) {
+        if crosswordBoard.rowWord {
+            let rowStackView = crosswordBoard.rowOfButtons[selectedRow]
+            // Iterate through row
+            for view in rowStackView.arrangedSubviews {
+                let bttn = view as! LetterButton
+                if bttn.isEnabled && bttn.columnNumber == selectedColumn + 1 {
+                    bttn.sendActions(for: .touchUpInside)
+                }
+            }
+        }
+    }
     
 }
 

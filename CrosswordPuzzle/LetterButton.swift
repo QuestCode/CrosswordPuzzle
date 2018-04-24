@@ -10,7 +10,6 @@ import UIKit
 
 class LetterButton: UIButton {
     
-    
     public var rowNumber: Int = 0 {
         didSet{
             setupButton()
@@ -65,6 +64,7 @@ class LetterButton: UIButton {
         }
     }
     
+    
     convenience init() {
         self.init(frame: .zero)
         setupButton()
@@ -87,7 +87,7 @@ class LetterButton: UIButton {
         let numberLabel = UILabel()
         numberLabel.text = wordNumber
         numberLabel.translatesAutoresizingMaskIntoConstraints = false
-        numberLabel.font = UIFont.systemFont(ofSize: 6)
+        numberLabel.font = UIFont.systemFont(ofSize: 10)
         self.addSubview(numberLabel)
         
         numberLabel.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
