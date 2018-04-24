@@ -39,11 +39,13 @@ class ViewController: UIViewController {
         hintView.setContentHuggingPriority(.defaultHigh, for: .vertical)
         hintView.translatesAutoresizingMaskIntoConstraints = false
         hintView.bgColor = UIColor.clear
-        var hints = [Hint]()
+        var words = [Word]()
         for word in crosswordStore.crossword.allWords {
-            hints.append(word.hint)
+            print("Hint: \(word.hint.info)")
+            
+            words.append(word)
         }
-        hintView.hints = hints
+        hintView.words = words
 
         
         
@@ -97,6 +99,14 @@ extension ViewController: CrosswordBoardDelegate, KeyboardDelegate {
             for view in rowStackView.arrangedSubviews {
                 let bttn = view as! LetterButton
                 if bttn.isEnabled && bttn.columnNumber == selectedColumn + 1 {
+                    bttn.sendActions(for: .touchUpInside)
+                }
+            }
+        } else {
+            // Iterate through stackviews array to find button for every button in column
+            for stackView in crosswordBoard.rowOfButtons {
+                let bttn = stackView.arrangedSubviews[selectedColumn] as! LetterButton
+                if bttn.isEnabled && bttn.rowNumber == selectedRow + 1 {
                     bttn.sendActions(for: .touchUpInside)
                 }
             }

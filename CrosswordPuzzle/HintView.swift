@@ -14,7 +14,7 @@ class HintView: UIView {
     private let wordNumberLabel = UILabel()
     private var currentIndex = 0
     
-    public var hints: [Hint] = [Hint]() {
+    public var words: [Word] = [Word]() {
         didSet {
             setupView()
         }
@@ -46,11 +46,11 @@ class HintView: UIView {
         
         
         
-        if hints.count > 0 {
-            let hint = hints[currentIndex]
+        if words.count > 0 {
+            let word = words[currentIndex]
             
             // Word Number
-            wordNumberLabel.text = "\(hint.number)"
+            wordNumberLabel.text = "\(word.hint.number)"
             wordNumberLabel.textColor = textColor
             wordNumberLabel.translatesAutoresizingMaskIntoConstraints = false
             addSubview(wordNumberLabel)
@@ -65,7 +65,7 @@ class HintView: UIView {
             hintLabel.textColor = textColor
             hintLabel.numberOfLines = 0
             hintLabel.textAlignment = .center
-            hintLabel.text = hint.info
+            hintLabel.text = word.hint.info
             hintLabel.translatesAutoresizingMaskIntoConstraints = false
             addSubview(hintLabel)
             
@@ -88,18 +88,18 @@ class HintView: UIView {
         
         if sender.direction == .right {
             currentIndex += 1
-            if currentIndex >= hints.count {
+            if currentIndex >= words.count {
                 currentIndex = 0
             }
-            wordNumberLabel.text = "\(hints[currentIndex].number)"
-            hintLabel.text = hints[currentIndex].info
+            wordNumberLabel.text = "\(words[currentIndex].hint.number)"
+            hintLabel.text = words[currentIndex].hint.info
         } else if sender.direction == .left {
             currentIndex -= 1
             if currentIndex < 0 {
-                currentIndex = hints.count - 1
+                currentIndex = words.count - 1
             }
-            wordNumberLabel.text = "\(hints[currentIndex].number)"
-            hintLabel.text = hints[currentIndex].info
+            wordNumberLabel.text = "\(words[currentIndex].hint.number)"
+            hintLabel.text = words[currentIndex].hint.info
         }
     }
     

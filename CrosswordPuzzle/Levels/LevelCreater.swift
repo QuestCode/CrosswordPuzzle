@@ -36,19 +36,22 @@ class LevelCreater: NSObject {
                 word.hint.info = "Player that crouches behind home plate"
                 word.hint.number = 1
             case "COMPETE":
-                word.hint.info = "take part in a contest"
+                word.hint.info = "Take part in a contest"
                 word.hint.number = 2
             case "PITCH":
-                word.hint.info = "throw (the ball) for the batter to try to hit"
+                word.hint.info = "Throw (the ball) for the batter to try to hit"
                 word.hint.number = 3
             case "COACH":
-                word.hint.info = "person who trains an athlete"
+                word.hint.info = "Person who trains an athlete"
                 word.hint.number = 4
             case "POLO":
-                word.hint.info = "played on a horse"
+                word.hint.info = "Played on a horse"
                 word.hint.number = 5
             case "LAP":
-                word.hint.info = "one full circuit"
+                word.hint.info = "One full circuit"
+                word.hint.number = 6
+            case "CREW":
+                word.hint.info = "Group of people who work closely together"
                 word.hint.number = 6
             default:
                 break

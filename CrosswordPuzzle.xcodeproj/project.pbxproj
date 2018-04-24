@@ -135,11 +135,7 @@
 				212B8DDC2077F6AB00097EE0 /* CrosswordBoard.swift */,
 				21497E9B20855F0A00E0F282 /* HintView.swift */,
 				21497EA020858D4100E0F282 /* CrossKeyboard.swift */,
-				21497EB72086BA2B00E0F282 /* CrosswordStore.swift */,
-				21497EB32086B48900E0F282 /* Crossword.swift */,
-				21497EAD2086A53B00E0F282 /* Puzzle.swift */,
-				21497E9E2085774600E0F282 /* Hint.swift */,
-				21497EA220865D8D00E0F282 /* Word.swift */,
+				21497F23208EE0E100E0F282 /* Model */,
 				21497EA4208664CB00E0F282 /* Levels */,
 			);
 			path = CrosswordPuzzle;
@@ -189,6 +185,18 @@
 				21497EC52086BF8200E0F282 /* CrosswordsGenerator.swift */,
 			);
 			path = Generator;
+			sourceTree = "<group>";
+		};
+		21497F23208EE0E100E0F282 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				21497EB72086BA2B00E0F282 /* CrosswordStore.swift */,
+				21497EB32086B48900E0F282 /* Crossword.swift */,
+				21497EAD2086A53B00E0F282 /* Puzzle.swift */,
+				21497E9E2085774600E0F282 /* Hint.swift */,
+				21497EA220865D8D00E0F282 /* Word.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
