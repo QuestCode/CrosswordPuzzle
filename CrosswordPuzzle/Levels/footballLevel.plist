@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Columns</key>
+	<array>
+		<string>2</string>
+		<string>2</string>
+		<string>7</string>
+		<string>7</string>
+		<string>4</string>
+	</array>
+	<key>Directions</key>
+	<array>
+		<string>horizontal</string>
+		<string>vertical</string>
+		<string>horizontal</string>
+		<string>vertical</string>
+		<string>horizontal</string>
+	</array>
+	<key>Hints</key>
+	<array>
+		<string>A shot at the basket that misses everything</string>
+		<string>Retrieves the ball and gains possession after a missed shot</string>
+		<string>Player passes the ball to someone who scores after receiving the pass</string>
+		<string>The area that makes up the free throw lane</string>
+		<string>Attempting to draw a foul on an opposing player by acting</string>
+	</array>
+	<key>Lines</key>
+	<array>
+		<string>-L----B---</string>
+		<string>-AUDIBLE--</string>
+		<string>-T----I---</string>
+		<string>-E-PUNT---</string>
+		<string>-R----Z---</string>
+		<string>-A--------</string>
+		<string>-LINEMEN--</string>
+		<string>----------</string>
+		<string>----------</string>
+		<string>----------</string>
+	</array>
+	<key>Numbers</key>
+	<array>
+		<string>3</string>
+		<string>1</string>
+		<string>5</string>
+		<string>2</string>
+		<string>4</string>
+	</array>
+	<key>Rows</key>
+	<array>
+		<string>2</string>
+		<string>1</string>
+		<string>2</string>
+		<string>1</string>
+		<string>4</string>
+	</array>
+	<key>Words</key>
+	<array>
+		<string>AUDIBLE</string>
+		<string>LATERAL</string>
+		<string>LINEMEN</string>
+		<string>BLITZ</string>
+		<string>PUNT</string>
+	</array>
+</dict>
+</plist>

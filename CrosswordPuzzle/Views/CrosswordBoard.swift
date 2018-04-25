@@ -169,12 +169,24 @@ class CrosswordBoard: UIView {
             }
         } else {
             // Iterate through stackviews array to find button for every button in column
-            for stackView in rowOfButtons {
-                let bttn = stackView.arrangedSubviews[currentButton.columnNumber] as! LetterButton
-                if bttn.isEnabled {
-                    bttn.isSelected = true
-                    bttn.borderColor = UIColor(rgb: 0x7CFC00)
-                    selectedBttns.append(bttn)
+            for i in 1..<rowOfButtons.count {
+                if i+1 != rowOfButtons.count {
+                    let bttn = rowOfButtons[i].arrangedSubviews[currentButton.columnNumber] as! LetterButton
+                    let nextBttn = rowOfButtons[i+1].arrangedSubviews[currentButton.columnNumber] as! LetterButton
+                    if bttn.isEnabled && nextBttn.isEnabled {
+                        bttn.isSelected = true
+                        bttn.borderColor = UIColor(rgb: 0x7CFC00)
+                        selectedBttns.append(bttn)
+                        
+                        // Check if array already have selected button in it
+                        for bttn1 in selectedBttns {
+                            if bttn1 != nextBttn {
+                                nextBttn.isSelected = true
+                                nextBttn.borderColor = UIColor(rgb: 0x7CFC00)
+                                selectedBttns.append(nextBttn)
+                            }
+                        }
+                    }
                 }
             }
         }
