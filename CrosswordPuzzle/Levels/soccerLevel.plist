@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Columns</key>
+	<array>
+		<string>2</string>
+		<string>2</string>
+		<string>4</string>
+		<string>6</string>
+		<string>8</string>
+		<string>5</string>
+	</array>
+	<key>Directions</key>
+	<array>
+		<string>horizontal</string>
+		<string>vertical</string>
+		<string>horizontal</string>
+		<string>horizontal</string>
+		<string>horizontal</string>
+		<string>vertical</string>
+	</array>
+	<key>Hints</key>
+	<array>
+		<string>Preventing the opposition from scoring</string>
+		<string>Attacker taking the ball past an opponent</string>
+		<string>Starting a game or restarting it after each goal</string>
+		<string>Positioning defenders away from the ball to protect the vital space behind the defense</string>
+		<string>Striking of a ball in the air by a player's head</string>
+		<string>To get the ball through or around an opponent</string>
+	</array>
+	<key>Lines</key>
+	<array>
+		<string>----------</string>
+		<string>-DEFENSE--</string>
+		<string>-R--------</string>
+		<string>KICKOFF---</string>
+		<string>-B-----B--</string>
+		<string>-BALANCE--</string>
+		<string>-L-----A--</string>
+		<string>HEADER-T--</string>
+		<string>----------</string>
+		<string>----------</string>
+	</array>
+	<key>Numbers</key>
+	<array>
+		<string>1</string>
+		<string>1</string>
+		<string>2</string>
+		<string>4</string>
+		<string>5</string>
+		<string>3</string>
+	</array>
+	<key>Rows</key>
+	<array>
+		<string>2</string>
+		<string>2</string>
+		<string>1</string>
+		<string>2</string>
+		<string>1</string>
+		<string>8</string>
+	</array>
+	<key>Words</key>
+	<array>
+		<string>DEFENSE</string>
+		<string>DRIBBLE</string>
+		<string>KICKOFF</string>
+		<string>BALANCE</string>
+		<string>HEADER</string>
+		<string>BEAT</string>
+	</array>
+</dict>
+</plist>

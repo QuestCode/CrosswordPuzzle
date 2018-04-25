@@ -14,6 +14,8 @@
 		211DF9E62090FC220092532D /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211DF9E52090FC220092532D /* Level.swift */; };
 		211DF9F0209136800092532D /* basketballLevel.plist in Resources */ = {isa = PBXBuildFile; fileRef = 211DF9EF2091367F0092532D /* basketballLevel.plist */; };
 		211DF9F220913A2D0092532D /* footballLevel.plist in Resources */ = {isa = PBXBuildFile; fileRef = 211DF9F120913A2D0092532D /* footballLevel.plist */; };
+		211DF9F420913F860092532D /* soccerLevel.plist in Resources */ = {isa = PBXBuildFile; fileRef = 211DF9F320913F860092532D /* soccerLevel.plist */; };
+		211DF9F6209143FB0092532D /* phillySportsLevel.plist in Resources */ = {isa = PBXBuildFile; fileRef = 211DF9F5209143FB0092532D /* phillySportsLevel.plist */; };
 		212B8DAD2077E96200097EE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212B8DAC2077E96200097EE0 /* AppDelegate.swift */; };
 		212B8DAF2077E96200097EE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212B8DAE2077E96200097EE0 /* ViewController.swift */; };
 		212B8DB22077E96200097EE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 212B8DB02077E96200097EE0 /* Main.storyboard */; };
@@ -61,6 +63,8 @@
 		211DF9E52090FC220092532D /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		211DF9EF2091367F0092532D /* basketballLevel.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = basketballLevel.plist; sourceTree = "<group>"; };
 		211DF9F120913A2D0092532D /* footballLevel.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = footballLevel.plist; sourceTree = "<group>"; };
+		211DF9F320913F860092532D /* soccerLevel.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = soccerLevel.plist; sourceTree = "<group>"; };
+		211DF9F5209143FB0092532D /* phillySportsLevel.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = phillySportsLevel.plist; sourceTree = "<group>"; };
 		212B8DA92077E96200097EE0 /* CrosswordPuzzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrosswordPuzzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		212B8DAC2077E96200097EE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		212B8DAE2077E96200097EE0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +195,8 @@
 			children = (
 				211DF9EF2091367F0092532D /* basketballLevel.plist */,
 				211DF9F120913A2D0092532D /* footballLevel.plist */,
+				211DF9F320913F860092532D /* soccerLevel.plist */,
+				211DF9F5209143FB0092532D /* phillySportsLevel.plist */,
 				21497EB92086BF3B00E0F282 /* LevelCreater.swift */,
 			);
 			path = Levels;
@@ -337,11 +343,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				211DF9F420913F860092532D /* soccerLevel.plist in Resources */,
 				211DF9F220913A2D0092532D /* footballLevel.plist in Resources */,
 				212B8DB72077E96400097EE0 /* LaunchScreen.storyboard in Resources */,
 				212B8DB42077E96400097EE0 /* Assets.xcassets in Resources */,
 				211DF9F0209136800092532D /* basketballLevel.plist in Resources */,
 				212B8DB22077E96200097EE0 /* Main.storyboard in Resources */,
+				211DF9F6209143FB0092532D /* phillySportsLevel.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

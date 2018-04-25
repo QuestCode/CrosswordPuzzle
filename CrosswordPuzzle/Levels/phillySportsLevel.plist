@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Columns</key>
+	<array>
+		<string>2</string>
+		<string>2</string>
+		<string>6</string>
+		<string>4</string>
+		<string>2</string>
+	</array>
+	<key>Directions</key>
+	<array>
+		<string>vertical</string>
+		<string>horizontal</string>
+		<string>vertical</string>
+		<string>horizontal</string>
+		<string>horizontal</string>
+	</array>
+	<key>Hints</key>
+	<array>
+		<string>Wideout traded from the Chicago Bears</string>
+		<string>Superbowl 52 Champions</string>
+		<string>NHL</string>
+		<string>Superbowl MVP</string>
+		<string>Cameroonian professional basketball</string>
+	</array>
+	<key>Lines</key>
+	<array>
+		<string>----------</string>
+		<string>-JOEL-----</string>
+		<string>-E---F----</string>
+		<string>-F-FOLES--</string>
+		<string>-F---Y----</string>
+		<string>-EAGLES---</string>
+		<string>-R---R----</string>
+		<string>-Y---S----</string>
+		<string>----------</string>
+		<string>----------</string>
+	</array>
+	<key>Numbers</key>
+	<array>
+		<string>1</string>
+		<string>4</string>
+		<string>2</string>
+		<string>3</string>
+		<string>1</string>
+	</array>
+	<key>Rows</key>
+	<array>
+		<string>2</string>
+		<string>6</string>
+		<string>3</string>
+		<string>4</string>
+		<string>2</string>
+	</array>
+	<key>Words</key>
+	<array>
+		<string>JEFFERY</string>
+		<string>EAGLES</string>
+		<string>FLYERS</string>
+		<string>FOLES</string>
+		<string>JOEL</string>
+	</array>
+</dict>
+</plist>

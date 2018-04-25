@@ -20,11 +20,11 @@
 	</array>
 	<key>Hints</key>
 	<array>
-		<string>A shot at the basket that misses everything</string>
-		<string>Retrieves the ball and gains possession after a missed shot</string>
-		<string>Player passes the ball to someone who scores after receiving the pass</string>
-		<string>The area that makes up the free throw lane</string>
-		<string>Attempting to draw a foul on an opposing player by acting</string>
+		<string>Quarterback changes the football play at the line of scrimmag</string>
+		<string>A backward pass</string>
+		<string>Players who start each play at the line of scrimmage</string>
+		<string>Defensive team rushes more football players than usual</string>
+		<string>A kick to the other team to give them the ball downfield</string>
 	</array>
 	<key>Lines</key>
 	<array>

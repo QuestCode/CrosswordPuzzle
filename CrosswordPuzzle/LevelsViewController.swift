@@ -15,7 +15,7 @@ class LevelsViewController: UIViewController {
     var levels: [Level] = [
         Level(title: "Basketball", color: UIColor(red: 1, green: 25, blue: 54), crossword: Crossword(allWords: [Word](), lines: [String]())),
         Level(title: "Football", color: UIColor(red: 1, green: 25, blue: 54), crossword: Crossword(allWords: [Word](), lines: [String]())),
-        Level(title: "Futbol", color: UIColor(red: 1, green: 25, blue: 54), crossword: Crossword(allWords: [Word](), lines: [String]())),
+        Level(title: "Soccer", color: UIColor(red: 1, green: 25, blue: 54), crossword: Crossword(allWords: [Word](), lines: [String]())),
         Level(title: "Philly Sports", color: UIColor(red: 1, green: 25, blue: 54), crossword: Crossword(allWords: [Word](), lines: [String]())),
         Level(title: "Los Angeles Sports", color: UIColor(red: 1, green: 25, blue: 54), crossword: Crossword(allWords: [Word](), lines: [String]()))
     ]
