@@ -82,7 +82,7 @@ class CrosswordBoard: UIView {
                     bttn.rowNumber = m
                     bttn.borderColor = UIColor(rgb: 0x89CFF0)
                     bttn.shouldBeTitle = "\(characters[n])"
-                    
+//                    bttn.title = "\(characters[n])"
                     
                     // Board button that have should be set to - should be inactive and should be invisible
                     if bttn.shouldBeTitle == "-" {
@@ -94,11 +94,7 @@ class CrosswordBoard: UIView {
                     
                     for word in words {
                         if word.column-1 == bttn.columnNumber && word.row-1 == bttn.rowNumber {
-                            if bttn.wordNumber == "" {
-                                bttn.wordNumber = "\(word.index)"
-                            } else {
-                                word.index = Int(bttn.wordNumber)!
-                            }
+                            bttn.wordNumber = "\(word.index)"
                         }
                     }
                     
@@ -136,21 +132,41 @@ class CrosswordBoard: UIView {
     private func selectRowColumn(currentButton: LetterButton) {
         let rowStackView = rowOfButtons[currentButton.rowNumber]
         
+        
         // Loop through each row to determine if word is in a row or column
         // Every word is at least 3 letters
-        for i in 1...2 {
-            let subviews = rowStackView.arrangedSubviews
-            let bttn = subviews[i] as! LetterButton
-            let nextBttn = subviews[i+1] as! LetterButton
-            
-            // Determine if both the button selected and next button is
-            // enabled to determine if the word is in a row or column
-            if bttn.isEnabled && nextBttn.isEnabled {
-                rowWord = true
-                break
-            } else {
-                rowWord = false
-                break
+        if currentButton.columnNumber > 2 {
+            let max = currentButton.columnNumber + 1
+            for i in currentButton.columnNumber...max {
+                let subviews = rowStackView.arrangedSubviews
+                let bttn = subviews[i] as! LetterButton
+                let nextBttn = subviews[i+1] as! LetterButton
+                
+                // Determine if both the button selected and next button is
+                // enabled to determine if the word is in a row or column
+                if bttn.isEnabled && nextBttn.isEnabled {
+                    rowWord = true
+                    break
+                } else {
+                    rowWord = false
+                    break
+                }
+            }
+        } else {
+            for i in 1...2 {
+                let subviews = rowStackView.arrangedSubviews
+                let bttn = subviews[i] as! LetterButton
+                let nextBttn = subviews[i+1] as! LetterButton
+                
+                // Determine if both the button selected and next button is
+                // enabled to determine if the word is in a row or column
+                if bttn.isEnabled && nextBttn.isEnabled {
+                    rowWord = true
+                    break
+                } else {
+                    rowWord = false
+                    break
+                }
             }
         }
         
@@ -161,6 +177,7 @@ class CrosswordBoard: UIView {
             // Iterate through row
             for view in rowStackView.arrangedSubviews {
                 let bttn = view as! LetterButton
+                
                 if bttn.isEnabled {
                     bttn.isSelected = true
                     bttn.borderColor = UIColor(rgb: 0x7CFC00)

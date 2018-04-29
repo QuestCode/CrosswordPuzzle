@@ -16,7 +16,7 @@ class LevelCollectionViewCell: UICollectionViewCell {
     
     
     public var level: Level = Level(title: "", color: UIColor.black,
-                                     crossword: Crossword(allWords: [Word](), lines: [String]())) {
+                                    puzzle: Puzzle()) {
         didSet {
             bgImageView.image = UIImage(named: level.title.uppercased())
             overlayView.backgroundColor = level.color.withAlphaComponent(0.5)

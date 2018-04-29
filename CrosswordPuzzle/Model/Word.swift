@@ -14,26 +14,33 @@ public enum Direction {
 }
 
 class Word: NSObject,NSCoding {
-    public var word = ""
-    public var index = 1 
-    public var column = 0
-    public var row = 0
-    public var direction: String = ""
-    private var directionEnum: Direction = .vertical
-    public var hint: Hint = Hint(info: "")
+    public var word: String!
+    public var index: Int = 0
+    public var column: Int = 0
+    public var row: Int = 0
+    public var direction: String!
+    public var hint: Hint!
     
     public var rowIndexes = [Int]()
     public var columnIndexes = [Int]()
     
     
-    init(word: String,index: Int,column: Int, row: Int, direction: Direction) {
+    init(word: String,index: Int,column: Int, row: Int, direction: String,hint: Hint) {
         super.init()
         self.word = word
         self.index = index
         self.column = column
         self.row = row
-        self.directionEnum = direction
-        self.setDirection()
+        self.direction = direction
+        self.hint = hint
+        
+        if direction == "horizontal" {
+            self.hint.numberDirection = "\(index) ▶️"
+        } else {
+            self.hint.numberDirection = "\(index) 🔽"
+        }
+        
+        
     }
     
     func encode(with aCoder: NSCoder) {
@@ -52,16 +59,6 @@ class Word: NSObject,NSCoding {
         self.direction = aDecoder.decodeObject(forKey: "direction") as! String
         self.hint = aDecoder.decodeObject(forKey: "hint") as! Hint
         self.index = aDecoder.decodeInteger(forKey: "index")
-    }
-
-    private func setDirection() {
-        if directionEnum == .horizontal {
-            direction = "horizontal"
-            hint.numberDirection = "\(index) ➡"
-        } else {
-            direction = "vertical"
-            hint.numberDirection = "\(index) ⬇"
-        }
     }
     
 }

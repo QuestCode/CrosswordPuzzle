@@ -4,11 +4,11 @@
 <dict>
 	<key>Columns</key>
 	<array>
-		<string>2</string>
-		<string>2</string>
-		<string>6</string>
-		<string>4</string>
-		<string>2</string>
+		<integer>2</integer>
+		<integer>2</integer>
+		<integer>6</integer>
+		<integer>4</integer>
+		<integer>2</integer>
 	</array>
 	<key>Directions</key>
 	<array>
@@ -41,19 +41,19 @@
 	</array>
 	<key>Numbers</key>
 	<array>
-		<string>1</string>
-		<string>4</string>
-		<string>2</string>
-		<string>3</string>
-		<string>1</string>
+		<integer>1</integer>
+		<integer>4</integer>
+		<integer>2</integer>
+		<integer>3</integer>
+		<integer>1</integer>
 	</array>
 	<key>Rows</key>
 	<array>
-		<string>2</string>
-		<string>6</string>
-		<string>3</string>
-		<string>4</string>
-		<string>2</string>
+		<integer>2</integer>
+		<integer>6</integer>
+		<integer>3</integer>
+		<integer>4</integer>
+		<integer>2</integer>
 	</array>
 	<key>Words</key>
 	<array>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Columns</key>
+	<array>
+		<integer>2</integer>
+		<integer>1</integer>
+		<integer>1</integer>
+		<integer>7</integer>
+		<integer>4</integer>
+		<integer>2</integer>
+	</array>
+	<key>Directions</key>
+	<array>
+		<string>vertical</string>
+		<string>horizontal</string>
+		<string>horizontal</string>
+		<string>vertical</string>
+		<string>horizontal</string>
+		<string>horizontal</string>
+	</array>
+	<key>Hints</key>
+	<array>
+		<string>Team moved from Brooklyn</string>
+		<string>Laker Greatest Point Guard</string>
+		<string>Running back for Chargers</string>
+		<string>NHL team</string>
+		<string>Receiver traded from New England in 2018</string>
+		<string>Center who is also a rapper</string>
+	</array>
+	<key>Lines</key>
+	<array>
+		<string>---COOKS--</string>
+		<string>-D----I---</string>
+		<string>JOHNSON---</string>
+		<string>-D----G---</string>
+		<string>-G----S---</string>
+		<string>MELVIN----</string>
+		<string>-R--------</string>
+		<string>-SHAQ-----</string>
+		<string>----------</string>
+		<string>----------</string>
+	</array>
+	<key>Numbers</key>
+	<array>
+		<integer>3</integer>
+		<integer>4</integer>
+		<integer>5</integer>
+		<integer>2</integer>
+		<integer>1</integer>
+		<integer>6</integer>
+	</array>
+	<key>Rows</key>
+	<array>
+		<integer>2</integer>
+		<integer>3</integer>
+		<integer>6</integer>
+		<integer>1</integer>
+		<integer>1</integer>
+		<integer>8</integer>
+	</array>
+	<key>Words</key>
+	<array>
+		<string>DODGERS</string>
+		<string>JOHNSON</string>
+		<string>MELVIN</string>
+		<string>KINGS</string>
+		<string>COOKS</string>
+		<string>SHAQ</string>
+	</array>
+</dict>
+</plist>

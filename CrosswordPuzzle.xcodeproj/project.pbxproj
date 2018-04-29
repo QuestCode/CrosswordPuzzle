@@ -16,8 +16,9 @@
 		211DF9F220913A2D0092532D /* footballLevel.plist in Resources */ = {isa = PBXBuildFile; fileRef = 211DF9F120913A2D0092532D /* footballLevel.plist */; };
 		211DF9F420913F860092532D /* soccerLevel.plist in Resources */ = {isa = PBXBuildFile; fileRef = 211DF9F320913F860092532D /* soccerLevel.plist */; };
 		211DF9F6209143FB0092532D /* phillySportsLevel.plist in Resources */ = {isa = PBXBuildFile; fileRef = 211DF9F5209143FB0092532D /* phillySportsLevel.plist */; };
+		211DF9F8209147F70092532D /* laSportsLevel.plist in Resources */ = {isa = PBXBuildFile; fileRef = 211DF9F7209147F70092532D /* laSportsLevel.plist */; };
 		212B8DAD2077E96200097EE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212B8DAC2077E96200097EE0 /* AppDelegate.swift */; };
-		212B8DAF2077E96200097EE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212B8DAE2077E96200097EE0 /* ViewController.swift */; };
+		212B8DAF2077E96200097EE0 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212B8DAE2077E96200097EE0 /* GameViewController.swift */; };
 		212B8DB22077E96200097EE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 212B8DB02077E96200097EE0 /* Main.storyboard */; };
 		212B8DB42077E96400097EE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 212B8DB32077E96400097EE0 /* Assets.xcassets */; };
 		212B8DB72077E96400097EE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 212B8DB52077E96400097EE0 /* LaunchScreen.storyboard */; };
@@ -32,7 +33,6 @@
 		21497EAE2086A53B00E0F282 /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21497EAD2086A53B00E0F282 /* Puzzle.swift */; };
 		21497EB42086B48900E0F282 /* Crossword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21497EB32086B48900E0F282 /* Crossword.swift */; };
 		21497EB82086BA2B00E0F282 /* CrosswordStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21497EB72086BA2B00E0F282 /* CrosswordStore.swift */; };
-		21497EBA2086BF3B00E0F282 /* LevelCreater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21497EB92086BF3B00E0F282 /* LevelCreater.swift */; };
 		21497ECC2086BF8200E0F282 /* ArrayShuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21497EC32086BF8200E0F282 /* ArrayShuffle.swift */; };
 		21497ECD2086BF8200E0F282 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21497EC42086BF8200E0F282 /* Array2D.swift */; };
 		21497ECE2086BF8200E0F282 /* CrosswordsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21497EC52086BF8200E0F282 /* CrosswordsGenerator.swift */; };
@@ -65,9 +65,10 @@
 		211DF9F120913A2D0092532D /* footballLevel.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = footballLevel.plist; sourceTree = "<group>"; };
 		211DF9F320913F860092532D /* soccerLevel.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = soccerLevel.plist; sourceTree = "<group>"; };
 		211DF9F5209143FB0092532D /* phillySportsLevel.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = phillySportsLevel.plist; sourceTree = "<group>"; };
+		211DF9F7209147F70092532D /* laSportsLevel.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = laSportsLevel.plist; sourceTree = "<group>"; };
 		212B8DA92077E96200097EE0 /* CrosswordPuzzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrosswordPuzzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		212B8DAC2077E96200097EE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		212B8DAE2077E96200097EE0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		212B8DAE2077E96200097EE0 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		212B8DB12077E96200097EE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		212B8DB32077E96400097EE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		212B8DB62077E96400097EE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -87,7 +88,6 @@
 		21497EAD2086A53B00E0F282 /* Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puzzle.swift; sourceTree = "<group>"; };
 		21497EB32086B48900E0F282 /* Crossword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crossword.swift; sourceTree = "<group>"; };
 		21497EB72086BA2B00E0F282 /* CrosswordStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrosswordStore.swift; sourceTree = "<group>"; };
-		21497EB92086BF3B00E0F282 /* LevelCreater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCreater.swift; sourceTree = "<group>"; };
 		21497EC32086BF8200E0F282 /* ArrayShuffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayShuffle.swift; sourceTree = "<group>"; };
 		21497EC42086BF8200E0F282 /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
 		21497EC52086BF8200E0F282 /* CrosswordsGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrosswordsGenerator.swift; sourceTree = "<group>"; };
@@ -151,7 +151,7 @@
 			children = (
 				21497ED12086C07900E0F282 /* Generator */,
 				212B8DAC2077E96200097EE0 /* AppDelegate.swift */,
-				212B8DAE2077E96200097EE0 /* ViewController.swift */,
+				212B8DAE2077E96200097EE0 /* GameViewController.swift */,
 				211DF9DC209038270092532D /* LevelsViewController.swift */,
 				21497E9D208561CB00E0F282 /* Storyboard */,
 				212B8DB32077E96400097EE0 /* Assets.xcassets */,
@@ -197,7 +197,7 @@
 				211DF9F120913A2D0092532D /* footballLevel.plist */,
 				211DF9F320913F860092532D /* soccerLevel.plist */,
 				211DF9F5209143FB0092532D /* phillySportsLevel.plist */,
-				21497EB92086BF3B00E0F282 /* LevelCreater.swift */,
+				211DF9F7209147F70092532D /* laSportsLevel.plist */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -348,6 +348,7 @@
 				212B8DB72077E96400097EE0 /* LaunchScreen.storyboard in Resources */,
 				212B8DB42077E96400097EE0 /* Assets.xcassets in Resources */,
 				211DF9F0209136800092532D /* basketballLevel.plist in Resources */,
+				211DF9F8209147F70092532D /* laSportsLevel.plist in Resources */,
 				212B8DB22077E96200097EE0 /* Main.storyboard in Resources */,
 				211DF9F6209143FB0092532D /* phillySportsLevel.plist in Resources */,
 			);
@@ -386,11 +387,10 @@
 				211DF9DF209038450092532D /* ZKCarousel.swift in Sources */,
 				211DF9E12090EE270092532D /* CardsCollectionViewLayout.swift in Sources */,
 				21497ECC2086BF8200E0F282 /* ArrayShuffle.swift in Sources */,
-				21497EBA2086BF3B00E0F282 /* LevelCreater.swift in Sources */,
 				211DF9E42090F2230092532D /* LevelCollectionViewCell.swift in Sources */,
 				21497EB82086BA2B00E0F282 /* CrosswordStore.swift in Sources */,
 				21497EAE2086A53B00E0F282 /* Puzzle.swift in Sources */,
-				212B8DAF2077E96200097EE0 /* ViewController.swift in Sources */,
+				212B8DAF2077E96200097EE0 /* GameViewController.swift in Sources */,
 				212B8DAD2077E96200097EE0 /* AppDelegate.swift in Sources */,
 				211DF9E62090FC220092532D /* Level.swift in Sources */,
 				211DF9DD209038270092532D /* LevelsViewController.swift in Sources */,

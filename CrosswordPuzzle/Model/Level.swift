@@ -11,11 +11,11 @@ import UIKit
 class Level {
     var title: String = ""
     var color: UIColor = UIColor.black
-    var crossword: Crossword!
+    var puzzle: Puzzle!
     
-    init(title: String,color: UIColor,crossword: Crossword) {
+    init(title: String,color: UIColor,puzzle: Puzzle) {
         self.title = title
         self.color = color
-        self.crossword = crossword
+        self.puzzle = puzzle
     }
 }

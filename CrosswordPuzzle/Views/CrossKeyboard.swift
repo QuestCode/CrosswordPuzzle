@@ -10,6 +10,8 @@ import UIKit
 
 protocol KeyboardDelegate {
     func moveToNextIndex(selectedRow: Int,selectedColumn: Int)
+    func moveBackAnIndex(selectedRow: Int,selectedColumn: Int)
+    func returnHome()
 }
 
 class CrossKeyboard: UIView {
@@ -89,7 +91,7 @@ class CrossKeyboard: UIView {
         midRow.axis = .horizontal
         
         var botRowBttns: [UIButton] = [UIButton]()
-        let botRowLetters = ["Z","X","C","V","B","N","M"]
+        let botRowLetters = ["🏠","Z","X","C","V","B","N","M","⬅️"]
         for letter in botRowLetters {
             let bttn = UIButton()
             bttn.backgroundColor = bgColor
@@ -125,14 +127,19 @@ class CrossKeyboard: UIView {
     }
     
     @objc private func tappedButton(_ sender: UIButton) {
-        
-        if letterBttn != nil && letterBttn.isSelected {
-            let string: String = (sender.titleLabel?.text)!
-            letterBttn.isSelected = false
-            letterBttn.bgColor = .white
-            letterBttn.borderColor = UIColor(rgb: 0x89CFF0)
-            letterBttn.title = string
-            delegate.moveToNextIndex(selectedRow: letterBttn.rowNumber, selectedColumn: letterBttn.columnNumber)
+        let string: String = (sender.titleLabel?.text)!
+        if string == "🏠" {
+            delegate.returnHome()
+        } else if letterBttn != nil && letterBttn.isSelected {
+            if string == "⬅️" {
+                delegate.moveBackAnIndex(selectedRow: letterBttn.rowNumber, selectedColumn: letterBttn.columnNumber)
+            } else {
+                letterBttn.isSelected = false
+                letterBttn.bgColor = .white
+                letterBttn.borderColor = UIColor(rgb: 0x89CFF0)
+                letterBttn.title = string
+                delegate.moveToNextIndex(selectedRow: letterBttn.rowNumber, selectedColumn: letterBttn.columnNumber)
+            }
         }
     }
 

@@ -4,12 +4,12 @@
 <dict>
 	<key>Columns</key>
 	<array>
-		<string>2</string>
-		<string>2</string>
-		<string>4</string>
-		<string>6</string>
-		<string>8</string>
-		<string>5</string>
+		<integer>2</integer>
+		<integer>2</integer>
+		<integer>1</integer>
+		<integer>2</integer>
+		<integer>1</integer>
+		<integer>8</integer>
 	</array>
 	<key>Directions</key>
 	<array>
@@ -26,7 +26,7 @@
 		<string>Attacker taking the ball past an opponent</string>
 		<string>Starting a game or restarting it after each goal</string>
 		<string>Positioning defenders away from the ball to protect the vital space behind the defense</string>
-		<string>Striking of a ball in the air by a player's head</string>
+		<string>Striking of a ball in the air by a player&apos;s head</string>
 		<string>To get the ball through or around an opponent</string>
 	</array>
 	<key>Lines</key>
@@ -44,21 +44,21 @@
 	</array>
 	<key>Numbers</key>
 	<array>
-		<string>1</string>
-		<string>1</string>
-		<string>2</string>
-		<string>4</string>
-		<string>5</string>
-		<string>3</string>
+		<integer>1</integer>
+		<integer>1</integer>
+		<integer>2</integer>
+		<integer>4</integer>
+		<integer>5</integer>
+		<integer>3</integer>
 	</array>
 	<key>Rows</key>
 	<array>
-		<string>2</string>
-		<string>2</string>
-		<string>1</string>
-		<string>2</string>
-		<string>1</string>
-		<string>8</string>
+		<integer>2</integer>
+		<integer>2</integer>
+		<integer>4</integer>
+		<integer>6</integer>
+		<integer>8</integer>
+		<integer>5</integer>
 	</array>
 	<key>Words</key>
 	<array>

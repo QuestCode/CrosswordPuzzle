@@ -8,11 +8,17 @@
 
 import UIKit
 
+protocol HintDelegate {
+    func selectWord(columnNumber: Int, rowNumber: Int)
+}
+
 class HintView: UIView {
     
     private let hintLabel = UILabel()
     private let wordNumberLabel = UILabel()
     private var currentIndex = 0
+    
+    public var delegate: HintDelegate!
     
     public var words: [Word] = [Word]() {
         didSet {
@@ -85,22 +91,33 @@ class HintView: UIView {
         }
     }
     @objc private func swipeGesture(_ sender: UISwipeGestureRecognizer) {
-        
+        var column = 0
+        var row = 0
         if sender.direction == .right {
             currentIndex += 1
             if currentIndex >= words.count {
                 currentIndex = 0
             }
-            wordNumberLabel.text = words[currentIndex].hint.numberDirection
-            hintLabel.text = words[currentIndex].hint.info
+            
+            let word = words[currentIndex]
+            column = word.column
+            row = word.row
+            wordNumberLabel.text = word.hint.numberDirection
+            hintLabel.text = word.hint.info
         } else if sender.direction == .left {
             currentIndex -= 1
             if currentIndex < 0 {
                 currentIndex = words.count - 1
             }
-            wordNumberLabel.text = words[currentIndex].hint.numberDirection
-            hintLabel.text = words[currentIndex].hint.info
+            
+            let word = words[currentIndex]
+            column = word.column
+            row = word.row
+            wordNumberLabel.text = word.hint.numberDirection
+            hintLabel.text = word.hint.info
         }
+        
+        delegate.selectWord(columnNumber: column, rowNumber: row)
     }
     
 }
