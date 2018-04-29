@@ -44,7 +44,7 @@ class LevelsViewController: UIViewController {
 
     private func setupCollectionView() {
         collectionView = UICollectionView(frame: CGRect(), collectionViewLayout: CardsCollectionViewLayout())
-        collectionView.backgroundColor = .blue
+        collectionView.backgroundColor = .clear
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
